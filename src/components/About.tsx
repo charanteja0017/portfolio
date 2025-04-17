@@ -1,6 +1,7 @@
-
 import { useEffect, useState, useRef } from "react";
-import { Code, Settings, Users, Clock, MessageSquare, School, Database } from "lucide-react";
+import { Code, Settings, Users, Clock, MessageSquare, Database, Server, Github, Cloud } from "lucide-react";
+import { motion } from "framer-motion";
+import TechnologyCard from "./TechnologyCard";
 
 const About = () => {
   const [animated, setAnimated] = useState(false);
@@ -28,13 +29,30 @@ const About = () => {
     };
   }, []);
 
-  const techSkills = [
-    "Angular",
-    "ASP.NET", 
-    "Web Technologies", 
-    "C# & C++", 
-    "Database Management"
-  ];
+  const technologies = {
+    Languages: [
+      { name: "Python", icon: Code },
+      { name: "C", icon: Code },
+      { name: "C++", icon: Code },
+      { name: "Java", icon: Code },
+      { name: "C#", icon: Code },
+      { name: "TypeScript", icon: Code },
+    ],
+    Frameworks: [
+      { name: ".NET", icon: Server },
+      { name: "Node.js", icon: Server },
+      { name: "Android Studio", icon: Settings },
+    ],
+    Databases: [
+      { name: "PostgreSQL", icon: Database },
+      { name: "Supabase", icon: Database },
+      { name: "SQL", icon: Database },
+    ],
+    Tools: [
+      { name: "Git", icon: Github },
+      { name: "AWS", icon: Cloud },
+    ],
+  };
 
   const softSkills = [
     { icon: Settings, title: "Problem-Solving" },
@@ -53,7 +71,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
           <div className={`transition-all duration-700 delay-300 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="glass-card h-full">
               <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
@@ -65,15 +83,8 @@ const About = () => {
 
           <div className={`transition-all duration-700 delay-500 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="glass-card h-full">
-              <h3 className="text-2xl font-bold mb-6">My Skills</h3>
-              <div className="space-y-2 mb-6">
-                {techSkills.map((skill, index) => (
-                  <div key={index} className="text-white/80">
-                    {skill}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <h3 className="text-2xl font-bold mb-6">Soft Skills</h3>
+              <div className="flex flex-wrap gap-4">
                 {softSkills.map((skill, index) => (
                   <div key={index} className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
                     <skill.icon className="w-4 h-4 text-primary" />
@@ -84,6 +95,29 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={animated ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="space-y-16"
+        >
+          {Object.entries(technologies).map(([category, techs], categoryIndex) => (
+            <div key={category} className="space-y-6">
+              <h3 className="text-2xl font-bold text-center text-white/90">{category}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {techs.map((tech, index) => (
+                  <TechnologyCard
+                    key={`${category}-${index}`}
+                    name={tech.name}
+                    icon={tech.icon}
+                    category={category}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
