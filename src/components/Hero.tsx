@@ -1,32 +1,45 @@
+
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
+import TypingEffect from "./TypingEffect";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const typingStrings = [
+    "Full Stack Developer", 
+    "Problem Solver", 
+    "Tech Enthusiast"
+  ];
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center py-20 relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Orbitron']"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Charan Teja <span className="text-primary">Pampana</span>
+            Hi, I'm <span className="text-primary">Charan</span>
           </motion.h1>
           
-          <motion.p 
-            className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl"
+          <motion.div
+            className="text-lg md:text-xl text-white/80 mb-10 h-8 flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Full Stack Developer | Computer Science Engineering Graduate | Problem Solver
-          </motion.p>
+            <TypingEffect 
+              strings={typingStrings} 
+              typingSpeed={100} 
+              backspaceSpeed={50} 
+              delayBetweenStrings={2000}
+            />
+          </motion.div>
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4"
@@ -36,7 +49,7 @@ const Hero = () => {
           >
             <motion.a 
               href="#projects" 
-              className="btn btn-primary"
+              className="btn btn-primary relative overflow-hidden group"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('projects');
@@ -44,11 +57,12 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View My Work
+              <span className="relative z-10">View My Work</span>
+              <span className="absolute inset-0 bg-primary/30 blur-md group-hover:opacity-100 opacity-0 transition-opacity duration-300"></span>
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="btn btn-outline"
+              className="btn btn-outline group relative overflow-hidden"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('contact');
@@ -56,7 +70,8 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Contact Me
+              <span className="relative z-10">Contact Me</span>
+              <span className="absolute inset-0 bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </motion.a>
           </motion.div>
         </div>
