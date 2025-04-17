@@ -41,16 +41,17 @@ const CustomCursor = () => {
     <>
       {/* Outer cursor */}
       <motion.div
-        className="fixed w-10 h-10 rounded-full border-2 border-primary pointer-events-none z-50 mix-blend-difference"
+        className="fixed w-12 h-12 rounded-full border-2 border-primary pointer-events-none z-50 mix-blend-difference"
         style={{
           left: position.x,
           top: position.y,
           translateX: "-50%",
           translateY: "-50%",
+          boxShadow: "0 0 20px rgba(255, 101, 0, 0.6), 0 0 40px rgba(255, 101, 0, 0.3)"
         }}
         animate={{
           scale: isPointer ? 1.5 : 1,
-          opacity: isActive ? 0.5 : 0.8,
+          opacity: isActive ? 0.7 : 1,
         }}
         transition={{
           type: "spring",
@@ -62,12 +63,13 @@ const CustomCursor = () => {
       
       {/* Inner cursor */}
       <motion.div
-        className="fixed w-2 h-2 rounded-full bg-primary pointer-events-none z-50 mix-blend-difference"
+        className="fixed w-3 h-3 rounded-full bg-primary pointer-events-none z-50 mix-blend-difference"
         style={{
           left: position.x,
           top: position.y,
           translateX: "-50%",
           translateY: "-50%",
+          boxShadow: "0 0 10px rgba(255, 101, 0, 0.8)"
         }}
         animate={{
           scale: isActive ? 3 : 1,

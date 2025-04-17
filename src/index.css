@@ -4,44 +4,35 @@
 
 @layer base {
   :root {
-    --background: 210 90% 10%;
+    --background: 210 90% 5%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 24 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 52% 27%;
+    --secondary: 213 52% 20%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 219 60% 12%;
+    --accent: 219 60% 8%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 213 52% 27%;
-    --input: 213 52% 27%;
+    --border: 213 52% 20%;
+    --input: 213 52% 20%;
     --ring: 24 100% 50%;
 
     --radius: 0.8rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -52,17 +43,9 @@
 
   body {
     @apply bg-dark text-foreground font-poppins;
-    background-image: radial-gradient(circle at top right, #1E3E62 0%, #0B192C 50%, #000000 100%);
+    background-image: radial-gradient(circle at top right, #1A2333 0%, #0B192C 50%, #000000 100%);
     min-height: 100vh;
     scroll-behavior: smooth;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-bold;
-  }
-
-  ::selection {
-    @apply bg-primary/40 text-white;
   }
 }
 

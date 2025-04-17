@@ -32,7 +32,7 @@ export default {
 					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: '#1E3E62',
+					DEFAULT: '#1A2333',
 					foreground: '#FFFFFF'
 				},
 				dark: {
@@ -138,7 +138,7 @@ export default {
 				'slide-up': 'slide-up 0.5s ease-out',
 			},
 			backgroundImage: {
-				'glass-gradient': 'linear-gradient(to right bottom, rgba(30, 62, 98, 0.3), rgba(11, 25, 44, 0.4))',
+				'glass-gradient': 'linear-gradient(to right bottom, rgba(26, 35, 51, 0.3), rgba(11, 25, 44, 0.4))',
 			}
 		}
 	},
