@@ -1,5 +1,6 @@
+
 import { useEffect, useState, useRef } from "react";
-import { Users, Clock, MessageSquare } from "lucide-react";
+import { Users, Clock, MessageSquare, Settings, Code } from "lucide-react";
 import { motion } from "framer-motion";
 import TechnologyCard from "./TechnologyCard";
 
