@@ -1,4 +1,3 @@
-
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -17,7 +16,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-primary">Creative</span> Portfolio
+            Charan Teja <span className="text-primary">Pampana</span>
           </motion.h1>
           
           <motion.p 
@@ -26,8 +25,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Welcome to my portfolio website showcasing my work, skills, and professional experience.
-            I'm passionate about creating beautiful, functional digital experiences.
+            Full Stack Developer | Computer Science Engineering Graduate | Problem Solver
           </motion.p>
           
           <motion.div 
@@ -58,7 +56,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get In Touch
+              Contact Me
             </motion.a>
           </motion.div>
         </div>
@@ -87,7 +85,6 @@ const Hero = () => {
         </motion.a>
       </motion.div>
       
-      {/* Background gradient elements */}
       <motion.div 
         className="absolute top-1/3 right-10 w-64 h-64 bg-primary/20 rounded-full filter blur-3xl"
         animate={{ 

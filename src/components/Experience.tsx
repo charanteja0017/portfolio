@@ -6,7 +6,7 @@ interface ExperienceItemProps {
   company: string;
   position: string;
   period: string;
-  description: string;
+  description: string[];
   index: number;
   inView: boolean;
 }
@@ -23,13 +23,10 @@ const ExperienceItem = ({ company, position, period, description, index, inView 
       }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
-      {/* Timeline dot */}
       <div className="absolute top-0 left-[calc(50%-0.5rem)] w-4 h-4 rounded-full bg-primary z-10"></div>
       
-      {/* Timeline line */}
       <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary/30 -translate-x-1/2 z-0"></div>
       
-      {/* Content box */}
       <div 
         className={`mx-auto glass-card w-full md:w-[calc(50%-2rem)] md:ml-auto md:mr-0 ${
           isEven ? 'md:ml-0 md:mr-auto' : ''
@@ -49,7 +46,11 @@ const ExperienceItem = ({ company, position, period, description, index, inView 
           <span className="text-sm">{period}</span>
         </div>
         
-        <p className="text-white/80">{description}</p>
+        <ul className="text-white/80 list-disc pl-5 space-y-2">
+          {description.map((desc, idx) => (
+            <li key={idx}>{desc}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -83,29 +84,17 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "Tech Innovators Inc.",
-      position: "Senior Frontend Developer",
-      period: "Jan 2022 - Present",
-      description: "Led the development of user interfaces for enterprise applications, improving performance by 40%. Mentored junior developers and implemented best practices for code quality and accessibility.",
-    },
-    {
-      company: "Digital Solutions LLC",
+      company: "Hebeon Technologies",
       position: "Full Stack Developer",
-      period: "Mar 2019 - Dec 2021",
-      description: "Developed and maintained web applications for clients across various industries. Implemented responsive designs and optimized database queries, reducing load times by 50%.",
-    },
-    {
-      company: "WebCraft Studios",
-      position: "Frontend Developer",
-      period: "Jun 2017 - Feb 2019",
-      description: "Created interactive UI components and implemented responsive designs. Collaborated with designers to ensure pixel-perfect implementation of mockups.",
-    },
-    {
-      company: "CreativeTech",
-      position: "Junior Developer",
-      period: "Aug 2015 - May 2017",
-      description: "Assisted in the development of websites and web applications. Gained experience in HTML, CSS, JavaScript, and various frontend frameworks.",
-    },
+      period: "April 2023 - October 2023",
+      description: [
+        "Developed a Chrome-based extension for exam proctoring, enhancing security and monitoring capabilities.",
+        "Implemented real-time notifications to improve user engagement and responsiveness.",
+        "Designed and integrated interview experience features, optimizing user workflows.",
+        "Built a scalable backend using ASP.NET for efficient data processing and management.",
+        "Developed a dynamic frontend with Angular, ensuring a smooth and interactive user experience."
+      ],
+    }
   ];
 
   return (
@@ -113,10 +102,10 @@ const Experience = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className={`section-title transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-            My Experience
+            Professional Experience
           </h2>
           <p className={`text-lg text-white/70 max-w-2xl mx-auto transition-all duration-700 delay-300 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-            My professional journey, showcasing my growth and expertise over the years.
+            My journey of professional growth and technological innovation.
           </p>
         </div>
 

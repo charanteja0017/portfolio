@@ -1,5 +1,6 @@
 
 import { useEffect, useState, useRef } from "react";
+import { Code, Settings, Users, Clock, MessageSquare, School, Database } from "lucide-react";
 
 interface SkillProps {
   name: string;
@@ -77,12 +78,20 @@ const About = () => {
     };
   }, []);
 
-  const skills = [
-    { name: "Web Development", percentage: 95, delay: 100 },
-    { name: "UI/UX Design", percentage: 85, delay: 200 },
-    { name: "Mobile Development", percentage: 80, delay: 300 },
-    { name: "Backend Development", percentage: 90, delay: 400 },
-    { name: "DevOps", percentage: 75, delay: 500 },
+  const techSkills = [
+    { name: "Angular", percentage: 85, delay: 100 },
+    { name: "ASP.NET", percentage: 80, delay: 200 },
+    { name: "Web Technologies", percentage: 90, delay: 300 },
+    { name: "C# & C++", percentage: 85, delay: 400 },
+    { name: "Database Management", percentage: 75, delay: 500 },
+  ];
+
+  const softSkills = [
+    { icon: Settings, title: "Problem-Solving" },
+    { icon: Users, title: "Collaboration" },
+    { icon: Clock, title: "Time Management" },
+    { icon: MessageSquare, title: "Communication" },
+    { icon: Code, title: "Critical Thinking" },
   ];
 
   return (
@@ -99,14 +108,13 @@ const About = () => {
             <div className="glass-card h-full">
               <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
               <p className="text-white/80 mb-6">
-                I'm a passionate developer with expertise in creating modern web applications 
-                and digital experiences. With several years of experience in the industry, 
-                I've developed a keen eye for design and a strong understanding of user experience.
+                I am a Computer Science Engineering graduate from MVSR Engineering College with a strong passion 
+                for software development and problem-solving. A computer enthusiast since childhood, I enjoy learning 
+                new technologies and building efficient solutions.
               </p>
               <p className="text-white/80">
-                My goal is to build applications that are not only visually appealing but also 
-                functional and user-friendly. I constantly stay updated with the latest technologies
-                and best practices to deliver cutting-edge solutions.
+                Currently working as a Full-Stack Developer at Hebeon Technologies, I develop scalable applications 
+                using Angular and ASP.NET, focusing on creating robust and user-friendly software solutions.
               </p>
             </div>
           </div>
@@ -114,7 +122,7 @@ const About = () => {
           <div className={`transition-all duration-700 delay-500 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="glass-card h-full">
               <h3 className="text-2xl font-bold mb-6">My Skills</h3>
-              {skills.map((skill, index) => (
+              {techSkills.map((skill, index) => (
                 <Skill
                   key={index}
                   name={skill.name}
@@ -122,6 +130,14 @@ const About = () => {
                   delay={skill.delay}
                 />
               ))}
+              <div className="mt-6 flex flex-wrap gap-4">
+                {softSkills.map((skill, index) => (
+                  <div key={index} className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
+                    <skill.icon className="w-4 h-4 text-primary" />
+                    <span className="text-sm">{skill.title}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

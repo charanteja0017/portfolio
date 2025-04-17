@@ -1,16 +1,17 @@
 
 import { useEffect, useRef, useState } from "react";
-import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { Send, Mail, Phone, Github } from "lucide-react";
 
 interface ContactInfoItemProps {
   icon: React.ElementType;
   title: string;
   content: string;
+  link?: string;
   delay: number;
   inView: boolean;
 }
 
-const ContactInfoItem = ({ icon: Icon, title, content, delay, inView }: ContactInfoItemProps) => {
+const ContactInfoItem = ({ icon: Icon, title, content, link, delay, inView }: ContactInfoItemProps) => {
   return (
     <div 
       className={`flex gap-4 transition-all duration-700 ${
@@ -23,7 +24,18 @@ const ContactInfoItem = ({ icon: Icon, title, content, delay, inView }: ContactI
       </div>
       <div>
         <h3 className="font-medium mb-1">{title}</h3>
-        <p className="text-white/70">{content}</p>
+        {link ? (
+          <a 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white/70 hover:text-primary transition-colors"
+          >
+            {content}
+          </a>
+        ) : (
+          <p className="text-white/70">{content}</p>
+        )}
       </div>
     </div>
   );
@@ -69,8 +81,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Here you would normally send the form data to your backend or email service
-    alert("Thanks for your message! This is a demo, so no message was actually sent.");
+    alert("Thanks for your message! I'll get back to you soon.");
     setFormData({
       name: "",
       email: "",
@@ -81,21 +92,22 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: "Email",
-      content: "contact@example.com",
+      icon: Phone,
+      title: "Phone",
+      content: "+91 9515288857",
       delay: 100,
     },
     {
-      icon: Phone,
-      title: "Phone",
-      content: "+1 234 567 890",
+      icon: Mail,
+      title: "Email",
+      content: "charanteja0017@gmail.com",
       delay: 200,
     },
     {
-      icon: MapPin,
-      title: "Location",
-      content: "New York, NY, USA",
+      icon: Github,
+      title: "GitHub",
+      content: "github.com/charanteja0017",
+      link: "https://github.com/charanteja0017",
       delay: 300,
     },
   ];
@@ -108,7 +120,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className={`text-lg text-white/70 max-w-2xl mx-auto transition-all duration-700 delay-300 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-            Have a project in mind or just want to say hello? Feel free to reach out!
+            Interested in collaboration or have a project in mind? Feel free to reach out!
           </p>
         </div>
 
@@ -127,6 +139,7 @@ const Contact = () => {
                     icon={info.icon}
                     title={info.title}
                     content={info.content}
+                    link={info.link}
                     delay={info.delay}
                     inView={inView}
                   />
@@ -156,7 +169,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors"
-                    placeholder="John Doe"
+                    placeholder="Charan Teja Pampana"
                   />
                 </div>
                 
@@ -172,7 +185,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors"
-                    placeholder="john@example.com"
+                    placeholder="charanteja0017@gmail.com"
                   />
                 </div>
               </div>
@@ -205,7 +218,7 @@ const Contact = () => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors resize-none"
-                  placeholder="Hello, I'd like to talk about..."
+                  placeholder="Hello Charan, I'd like to discuss..."
                 ></textarea>
               </div>
               
