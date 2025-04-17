@@ -1,15 +1,14 @@
 
 import { FC } from 'react';
-import { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface TechnologyCardProps {
   name: string;
-  icon: LucideIcon;
+  imageUrl: string;
   category: string;
 }
 
-const TechnologyCard: FC<TechnologyCardProps> = ({ name, icon: Icon }) => {
+const TechnologyCard: FC<TechnologyCardProps> = ({ name, imageUrl }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +18,11 @@ const TechnologyCard: FC<TechnologyCardProps> = ({ name, icon: Icon }) => {
       className="relative group"
     >
       <div className="glass-card overflow-hidden flex flex-col items-center justify-center p-4 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(255,101,0,0.3)] group-hover:border-primary/30">
-        <Icon className="w-8 h-8 text-primary mb-2 transition-transform duration-300 group-hover:scale-110" />
+        <img 
+          src={imageUrl} 
+          alt={name} 
+          className="w-8 h-8 mb-2 transition-transform duration-300 group-hover:scale-110"
+        />
         <h4 className="text-sm font-medium text-white/90">{name}</h4>
       </div>
     </motion.div>

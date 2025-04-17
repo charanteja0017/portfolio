@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Code, Settings, Users, Clock, MessageSquare, Database, Server, Github, Cloud } from "lucide-react";
+import { Users, Clock, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import TechnologyCard from "./TechnologyCard";
 
@@ -31,26 +31,26 @@ const About = () => {
 
   const technologies = {
     Languages: [
-      { name: "Python", icon: Code },
-      { name: "C", icon: Code },
-      { name: "C++", icon: Code },
-      { name: "Java", icon: Code },
-      { name: "C#", icon: Code },
-      { name: "TypeScript", icon: Code },
+      { name: "Python", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "C", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+      { name: "C++", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+      { name: "Java", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { name: "C#", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+      { name: "TypeScript", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     ],
     Frameworks: [
-      { name: ".NET", icon: Server },
-      { name: "Node.js", icon: Server },
-      { name: "Android Studio", icon: Settings },
+      { name: ".NET", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
+      { name: "Node.js", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Android Studio", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" },
     ],
     Databases: [
-      { name: "PostgreSQL", icon: Database },
-      { name: "Supabase", icon: Database },
-      { name: "SQL", icon: Database },
+      { name: "PostgreSQL", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "Supabase", imageUrl: "https://supabase.com/favicon.ico" },
+      { name: "SQL", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     ],
     Tools: [
-      { name: "Git", icon: Github },
-      { name: "AWS", icon: Cloud },
+      { name: "Git", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "AWS", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
     ],
   };
 
@@ -110,7 +110,7 @@ const About = () => {
                   <TechnologyCard
                     key={`${category}-${index}`}
                     name={tech.name}
-                    icon={tech.icon}
+                    imageUrl={tech.imageUrl}
                     category={category}
                   />
                 ))}
