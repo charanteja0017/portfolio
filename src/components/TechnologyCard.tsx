@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 interface TechnologyCardProps {
   name: string;
   imageUrl: string;
-  category: string;
 }
 
 const TechnologyCard: FC<TechnologyCardProps> = ({ name, imageUrl }) => {
