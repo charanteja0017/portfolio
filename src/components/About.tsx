@@ -108,13 +108,7 @@ const About = () => {
             <div className="glass-card h-full">
               <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
               <p className="text-white/80 mb-6">
-                I am a Computer Science Engineering graduate from MVSR Engineering College with a strong passion 
-                for software development and problem-solving. A computer enthusiast since childhood, I enjoy learning 
-                new technologies and building efficient solutions.
-              </p>
-              <p className="text-white/80">
-                Currently working as a Full-Stack Developer at Hebeon Technologies, I develop scalable applications 
-                using Angular and ASP.NET, focusing on creating robust and user-friendly software solutions.
+                Ever since I was a kid, I’ve been fascinated by computers — from exploring new software to trying out bits of code, I was always curious. That early interest naturally led me to choose Computer Science as my field of study. With a TS EAMCET rank of 6006, I got into MVSR Engineering College, where I began to truly dive into my passion for coding and developing applications. It was here that I realized how much I enjoy solving problems and bringing ideas to life through technology.
               </p>
             </div>
           </div>
