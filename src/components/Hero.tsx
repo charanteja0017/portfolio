@@ -82,14 +82,19 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Spline 3D design */}
+          {/* Right side - Profile Image */}
           <motion.div 
-            className="w-full md:w-1/2 h-64 md:h-96 rounded-lg overflow-hidden"
+            className="w-full md:w-1/2 flex justify-center items-center"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            
+            <img
+              src="https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//final-pfimg.jpg"
+              alt="Charan"
+              className="w-68 h-68 md:w-68 md:h-68 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-lg border-4 border-white"
+              style={{ maxWidth: "420px", maxHeight: "420px" }}
+            />
           </motion.div>
         </div>
       </div>
