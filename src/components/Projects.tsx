@@ -115,21 +115,14 @@ const Projects = () => {
       githubUrl: "https://github.com/charanteja0017/ImagetoPolkaDots",
       liveUrl: "https://imagetopolkadots.charanteja0017.in/",
     },
+    
     {
-      title: "DeepLearningExamples",
-      description: "A fork of NVIDIA's repository containing state-of-the-art deep learning scripts for various models, optimized for performance.",
-      image: "https://developer.nvidia.com/sites/default/files/akamai/developer-blogs/2020/DeepLearningExamples.png",
-      tags: ["PyTorch", "TensorFlow", "NVIDIA", "Deep Learning"],
-      githubUrl: "https://github.com/charanteja0017/DeepLearningExamples",
-      liveUrl: "#",
-    },
-    {
-      title: "Radiant Glass Flow",
+      title: "Portfolio",
       description: "A TypeScript-based web application scaffolded with Vite and styled using Tailwind CSS, demonstrating modern frontend development practices.",
-      image: "https://vitejs.dev/logo-with-shadow.png",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//portfolio.png",
       tags: ["TypeScript", "Vite", "Tailwind CSS"],
       githubUrl: "https://github.com/charanteja0017/radiant-glass-flow",
-      liveUrl: "https://lovable.dev/projects/b65f124e-8d64-4f68-9bc8-f68d8df6e639",
+      liveUrl: "#",
     },
   ];
   

@@ -40,10 +40,10 @@ const About = () => {
     { name: "Node.js", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "Android Studio", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" },
     { name: "PostgreSQL", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "Supabase", imageUrl: "https://supabase.com/favicon.ico" },
+    { name: "Supabase", imageUrl: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" },
     { name: "SQL", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "Git", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "AWS", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" }
+    { name: "AWS", imageUrl:"https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"}
   ];
 
   const softSkills = [
