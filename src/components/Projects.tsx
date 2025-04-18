@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -43,7 +42,7 @@ const Project = ({ title, description, image, tags, githubUrl, liveUrl, index }:
             </a>
           )}
           
-          {liveUrl && (
+          {liveUrl && liveUrl !== "#" && (
             <a 
               href={liveUrl} 
               target="_blank" 
@@ -103,7 +102,7 @@ const Projects = () => {
     {
       title: "SudokoS",
       description: "A Java-based Sudoku solver that utilizes recursive backtracking algorithms to solve puzzles efficiently.",
-      image: "https://enakano.github.io/projects/Sudoku%20Solver/sudoku_solver.png",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//The%20Sudoku%20Solver%20mobile%20app%20helps%20users%20quickly%20solve%20Sudoku%20puzzles%20by%20simply%20entering%20the%20given%20numbers%20on%20a%20user-friendly%20interface.%20It%20uses%20smart%20algorithms%20to%20instantly%20fill%20in%20the%20correct%20v.jpg",
       tags: ["Java", "Algorithms", "Backtracking"],
       githubUrl: "https://github.com/charanteja0017/SudokoS",
       liveUrl: "#",
@@ -111,7 +110,7 @@ const Projects = () => {
     {
       title: "ImagetoPolkaDots",
       description: "A Python application that converts images into polka dot representations using image processing techniques.",
-      image: "https://pouch.jumpshare.com/preview/j2HQp10LpupGnArCSgsHzvcjXgvCXxGVdpsnh6S7AhQ7H3OYA93oAFFYO36zQX5CTonTAmGYQGxlro2bRIFwdveUf_dG3LLZN5BkzXJ43dE",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//polkadot-art%20(4).png",
       tags: ["Python", "OpenCV", "Image Processing"],
       githubUrl: "https://github.com/charanteja0017/ImagetoPolkaDots",
       liveUrl: "https://imagetopolkadots.charanteja0017.in/",
