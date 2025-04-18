@@ -1,6 +1,6 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Send, Mail, Phone, Github } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 interface ContactInfoItemProps {
   icon: React.ElementType;
@@ -78,16 +78,31 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thanks for your message! I'll get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    try {
+      const response = await fetch(
+        "https://viqustwtfjtjpzdoihxw.supabase.co/functions/v1/public-update-contact-messages",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        toast.success("Message sent!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        toast.error("Failed to send message.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message.");
+    }
   };
 
   const contactInfo = [
@@ -114,6 +129,7 @@ const Contact = () => {
 
   return (
     <section id="contact" ref={sectionRef} className="py-20">
+      <Toaster position="top-center" />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className={`section-title transition-all duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}>
@@ -169,7 +185,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors"
-                    placeholder="Charan Teja Pampana"
+                    placeholder="your name"
                   />
                 </div>
                 
@@ -185,7 +201,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors"
-                    placeholder="charanteja0017@gmail.com"
+                    placeholder="example@mail.com"
                   />
                 </div>
               </div>
