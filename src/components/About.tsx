@@ -63,27 +63,27 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-          <div className={`transition-all duration-700 delay-300 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="glass-card h-full">
-              <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
-              <p className="text-white/80 mb-6">
-                Ever since I was a kid, I've been fascinated by computers — from exploring new software to trying out bits of code, I was always curious. That early interest naturally led me to choose Computer Science as my field of study. With a TS EAMCET rank of 6006, I got into MVSR Engineering College, where I began to truly dive into my passion for coding and developing applications. It was here that I realized how much I enjoy solving problems and bringing ideas to life through technology.
-              </p>
-            </div>
+        <div className={`transition-all duration-700 delay-300 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+          <div className="glass-card h-full pb-6">
+            <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
+            <p className="text-white/80 mb-6">
+              Ever since I was a kid, I’ve been driven by an obsession to solve problems and understand how things work — especially computers. I didn’t just play with software; I tore into it, debugging errors, experimenting with code snippets, and asking, “How can I make this better?” That curiosity evolved into a love for building solutions that matter.
+            </p>
+            <p className="text-white/80 mb-6">
+              For me, coding is more than logic — it’s about translating complex ideas into simple, actionable tools. Whether I’m adapting to new frameworks to meet shifting project goals, breaking down technical concepts for non-developers, or refining code to balance efficiency and scalability, I thrive on turning abstract questions into tangible results.
+            </p>
+            <p className="text-white/80 mb-6">
+              Computer Science became my playground for creative problem-solving, where I could channel my “what if?” mindset into building software that bridges gaps — between users and technology, ideas and execution, or today’s challenges and tomorrow’s innovations.
+            </p>
+            <hr className="my-6 border-white/20" />
+            <h3 className="text-2xl font-bold mb-6">Soft Skills</h3>
+            <div className="flex flex-wrap gap-4">
+              {softSkills.map((skill, index) => (
+          <div key={index} className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
+            <skill.icon className="w-4 h-4 text-primary" />
+            <span className="text-sm">{skill.title}</span>
           </div>
-
-          <div className={`transition-all duration-700 delay-500 ${animated ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div className="glass-card h-full">
-              <h3 className="text-2xl font-bold mb-6">Soft Skills</h3>
-              <div className="flex flex-wrap gap-4">
-                {softSkills.map((skill, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
-                    <skill.icon className="w-4 h-4 text-primary" />
-                    <span className="text-sm">{skill.title}</span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
