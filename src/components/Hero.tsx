@@ -14,8 +14,8 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="home" className="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left side - Text content */}
           <motion.div 

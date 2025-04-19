@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building, Calendar } from "lucide-react";
 
@@ -9,10 +8,12 @@ interface ExperienceItemProps {
   description: string[];
   index: number;
   inView: boolean;
+  totalExperiences: number; // Add this
 }
 
-const ExperienceItem = ({ company, position, period, description, index, inView }: ExperienceItemProps) => {
+const ExperienceItem = ({ company, position, period, description, index, inView, totalExperiences }: ExperienceItemProps) => {
   const isEven = index % 2 === 0;
+  const isFirstItem = index === 0;
   
   return (
     <div 
@@ -23,10 +24,15 @@ const ExperienceItem = ({ company, position, period, description, index, inView 
       }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
+      {/* Only show dot for the current experience */}
       <div className="absolute top-0 left-[calc(50%-0.5rem)] w-4 h-4 rounded-full bg-primary z-10"></div>
       
-      <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary/30 -translate-x-1/2 z-0"></div>
+      {/* Only show connecting line if there's more than one experience */}
+      {totalExperiences > 1 && (
+        <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary/30 -translate-x-1/2 z-0"></div>
+      )}
       
+      {/* Rest of the component remains the same */}
       <div 
         className={`mx-auto glass-card w-full md:w-[calc(50%-2rem)] md:ml-auto md:mr-0 ${
           isEven ? 'md:ml-0 md:mr-auto' : ''
@@ -86,13 +92,13 @@ const Experience = () => {
     {
       company: "Hebeon Technologies",
       position: "Full Stack Developer",
-      period: "April 2023 - October 2023",
+      period: "Apr 2023 - Oct 2023",
       description: [
-        "Developed a Chrome-based extension for exam proctoring, enhancing security and monitoring capabilities.",
-        "Implemented real-time notifications to improve user engagement and responsiveness.",
-        "Designed and integrated interview experience features, optimizing user workflows.",
-        "Built a scalable backend using ASP.NET for efficient data processing and management.",
-        "Developed a dynamic frontend with Angular, ensuring a smooth and interactive user experience."
+        "Built a Chrome extension for exam proctoring.",
+        "Implemented real-time notifications.",
+        "Enhanced interview features and user experience.",
+        "Developed backend with ASP.NET.",
+        "Created frontend with Angular."
       ],
     }
   ];
@@ -119,6 +125,7 @@ const Experience = () => {
               period={exp.period}
               description={exp.description}
               inView={inView}
+              totalExperiences={experiences.length} // Add this prop
             />
           ))}
         </div>

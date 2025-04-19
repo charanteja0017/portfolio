@@ -49,6 +49,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSending, setIsSending] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -80,6 +81,9 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSending) return; // Prevent multiple clicks
+
+    setIsSending(true);
     try {
       const response = await fetch(
         "https://viqustwtfjtjpzdoihxw.supabase.co/functions/v1/public-update-contact-messages",
@@ -102,6 +106,8 @@ const Contact = () => {
       }
     } catch (error) {
       toast.error("Failed to send message.");
+    } finally {
+      setTimeout(() => setIsSending(false), 3000); // Disable for 3 seconds
     }
   };
 
@@ -241,6 +247,7 @@ const Contact = () => {
               <button 
                 type="submit" 
                 className="btn btn-primary flex items-center gap-2"
+                disabled={isSending}
               >
                 Send Message
                 <Send className="w-4 h-4" />
