@@ -1,6 +1,6 @@
 
 import { Github, Linkedin, Twitter } from "lucide-react";
-
+import { SiLeetcode } from "react-icons/si";
 const Footer = () => {
   return (
     <footer className="py-10 border-t border-white/10">
@@ -26,12 +26,14 @@ const Footer = () => {
             <a 
               href="#" 
               className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
-              aria-label="Twitter"
+              aria-label="Leetcode"
             >
-              <Twitter className="w-5 h-5" />
+              <SiLeetcode className="w-5 h-5" />
+
+             
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/charan-teja-pampana-968b06213/" 
               className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >

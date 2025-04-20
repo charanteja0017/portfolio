@@ -1,7 +1,8 @@
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import TypingEffect from "./TypingEffect";
-
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { SiLeetcode,SiWhatsapp } from "react-icons/si";
 const Hero = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -32,7 +33,45 @@ const Hero = () => {
             >
               Hi, I'm <span className="text-primary">Charan</span>
             </motion.h1>
-            
+
+            {/* Social Icons */}
+            <div className="flex gap-4 mb-8">
+              <a
+              href="https://github.com/charanteja0017"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
+              aria-label="Github"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <Github className="w-5 h-5" />
+              </a>
+              <a
+              href="https://leetcode.com/u/charanteja0017/"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
+              aria-label="Leetcode"
+              >
+              <SiLeetcode className="w-5 h-5" />
+              </a>
+              <a
+              href="https://www.linkedin.com/in/charan-teja-pampana-968b06213/"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+              href="https://wa.me/9515288857"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-primary transition-colors"
+              aria-label="whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <SiWhatsapp className="w-5 h-5" />
+              </a>
+            </div>
+
             <motion.div
               className="text-lg md:text-xl text-white/80 mb-10 h-8 flex items-center"
               initial={{ opacity: 0, y: 20 }}
