@@ -13,7 +13,7 @@ interface ProjectProps {
 
 const Project = ({ title, description, image, tags, githubUrl, liveUrl, index }: ProjectProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
     <div 
       className={`glass-card overflow-hidden group animate-fade-in`}
@@ -31,7 +31,8 @@ const Project = ({ title, description, image, tags, githubUrl, liveUrl, index }:
         <div className={`absolute inset-0 bg-primary/20 backdrop-blur-sm flex items-center justify-center gap-4 transition-opacity duration-300 ${
           isHovered ? "opacity-100" : "opacity-0"
         }`}>
-          {githubUrl && (
+          {/* Only show Github icon if githubUrl is provided and not "#" */}
+          {githubUrl && githubUrl !== "#" && (
             <a 
               href={githubUrl} 
               target="_blank" 
@@ -120,10 +121,34 @@ const Projects = () => {
       title: "Portfolio",
       description: "A TypeScript-based web application scaffolded with Vite and styled using Tailwind CSS, demonstrating modern frontend development practices.",
       image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//portfolio.png",
-      tags: ["TypeScript", "Vite", "Tailwind CSS"],
+      tags: ["TypeScript", "Vite", "Tailwind CSS","supabase"],
       githubUrl: "https://github.com/charanteja0017/radiant-glass-flow",
       liveUrl: "#",
     },
+    {
+      title: "MB9 News",
+      description: "A news website built with Wordpress, featuring a responsive design and a user-friendly interface, providing the latest local news updates.",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//Screenshot%202025-04-20%20at%204.15.47%20PM.png",
+      tags: ["Wordpress", "Rest api", "Responsive Design"],
+      githubUrl: "#",
+      liveUrl: "https://mb9news.in/",
+    },
+    {
+      title: "Event Flow",
+      description: "A modern event management platform that streamlines client event management with features like timeline dashboards, RSVP tracking, and team notifications.",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//brave_screenshot_eventflow.charanteja0017.in.png",
+      tags: ["Event Management", "React", "Supabase"],
+      githubUrl: "#",
+      liveUrl: "https://eventflow.charanteja0017.in/",
+    },
+    {
+      title: "Neon Notes",
+      description: "Neon Notes is an app where users can create and delete notes, with all notes instantly visible to everyone in real-time.",
+      image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//Neon%20Notes.png",
+      tags: ["Event Management", "React", "Supabase"],
+      githubUrl: "#",
+      liveUrl: "http://neonnotes.charanteja0017.in/",
+    }
   ];
   
 
