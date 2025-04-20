@@ -145,7 +145,7 @@ const Projects = () => {
       title: "Neon Notes",
       description: "Neon Notes is an app where users can create and delete notes, with all notes instantly visible to everyone in real-time.",
       image: "https://viqustwtfjtjpzdoihxw.supabase.co/storage/v1/object/public/webappimages//Neon%20Notes.png",
-      tags: ["Event Management", "React", "Supabase"],
+      tags: ["Notes", "React", "Supabase"],
       githubUrl: "#",
       liveUrl: "http://neonnotes.charanteja0017.in/",
     }
