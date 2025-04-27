@@ -1,16 +1,22 @@
-import ReactGA from 'react-ga4';
+// Declare the gtag function to make TypeScript happy
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      action: string | Date,
+      params?: Record<string, unknown>
+    ) => void;
+    dataLayer: unknown[];
+  }
+}
 
 /**
  * Initialize Google Analytics
- * @param trackingId Your Google Analytics tracking ID (e.g., "G-XXXXXXXXXX")
+ * This is a no-op function as we are using the gtag script in index.html
+ * Kept for API compatibility
  */
-export const initGA = (trackingId: string): void => {
-  if (!trackingId) {
-    console.warn('Google Analytics tracking ID not provided');
-    return;
-  }
-
-  ReactGA.initialize(trackingId);
+export const initGA = (): void => {
+  // GA is already initialized via the script tag in index.html
 };
 
 /**
@@ -19,7 +25,12 @@ export const initGA = (trackingId: string): void => {
  */
 export const pageView = (path?: string): void => {
   const page = path || window.location.pathname + window.location.search;
-  ReactGA.send({ hitType: 'pageview', page });
+  
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', 'G-87QCY92YDF', {
+      page_path: page
+    });
+  }
 };
 
 /**
@@ -35,10 +46,11 @@ export const trackEvent = (
   label?: string,
   value?: number
 ): void => {
-  ReactGA.event({
-    category,
-    action,
-    label,
-    value,
-  });
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
 }; 

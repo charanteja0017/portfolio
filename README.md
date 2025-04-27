@@ -52,15 +52,15 @@ npm run dev
 
 ## Google Analytics Setup
 
-This project is configured to use Google Analytics for tracking user interactions. To set it up:
+This project is configured with Google Analytics 4 for tracking user interactions. The tracking code is already set up in the `index.html` file with the tracking ID `G-87QCY92YDF`.
+
+If you need to use your own Google Analytics account:
 
 1. Create a Google Analytics account if you don't have one already
 2. Create a new Google Analytics 4 property and get your tracking ID (format: G-XXXXXXXXXX)
-3. Create a `.env.local` file in the root directory with the following content:
-   ```
-   VITE_GA_TRACKING_ID=your-tracking-id
-   ```
-4. Alternatively, you can edit the tracking ID directly in `src/lib/constants.ts`
+3. Replace the tracking ID in two places:
+   - In `index.html` in the Google Analytics script tags
+   - In `src/lib/analytics.ts` in the pageView function
 
 The analytics configuration is in `src/lib/analytics.ts` if you need to customize the tracking behavior.
 

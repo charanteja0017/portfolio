@@ -7,8 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect } from "react";
-import { initGA, pageView } from "./lib/analytics";
-import { GA_TRACKING_ID } from "./lib/constants";
+import { pageView } from "./lib/analytics";
 
 const queryClient = new QueryClient();
 
@@ -22,9 +21,6 @@ const PageTracker = () => {
   
   return null;
 };
-
-// Initialize Google Analytics
-initGA(GA_TRACKING_ID);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
