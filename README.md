@@ -50,6 +50,20 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Google Analytics Setup
+
+This project is configured to use Google Analytics for tracking user interactions. To set it up:
+
+1. Create a Google Analytics account if you don't have one already
+2. Create a new Google Analytics 4 property and get your tracking ID (format: G-XXXXXXXXXX)
+3. Create a `.env.local` file in the root directory with the following content:
+   ```
+   VITE_GA_TRACKING_ID=your-tracking-id
+   ```
+4. Alternatively, you can edit the tracking ID directly in `src/lib/constants.ts`
+
+The analytics configuration is in `src/lib/analytics.ts` if you need to customize the tracking behavior.
+
 ## What technologies are used for this project?
 
 This project is built with:
