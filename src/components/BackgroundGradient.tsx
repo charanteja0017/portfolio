@@ -38,8 +38,8 @@ const BackgroundGradient = () => {
       />
       
       {/* Secondary gradients */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 bg-secondary blur-[100px]"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-10 bg-dark blur-[100px]"></div>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 bg-secondary blur-[100px]" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-10 bg-dark blur-[100px]" />
     </div>
   );
 };
