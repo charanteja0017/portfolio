@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Hi, I'm <span className="text-primary">Charan</span>
+              Hi, I'm <span className="text-primary">Charan</span>Teja
             </motion.h1>
 
             {/* Social Icons */}
