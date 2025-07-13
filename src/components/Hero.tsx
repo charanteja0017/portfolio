@@ -73,7 +73,7 @@ const Hero = () => {
             </div>
 
             <motion.div
-              className="text-lg md:text-xl text-white/80 mb-10 h-8 flex items-center"
+              className="text-lg md:text-xl text-white/80 mb-6 h-8 flex items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -85,7 +85,19 @@ const Hero = () => {
                 delayBetweenStrings={2000}
               />
             </motion.div>
-            
+
+            {/* Education Status */}
+            <motion.div
+              className="text-sm text-white/60 mb-6 flex items-center gap-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span>
+                MTech AI @ <span className="text-primary font-semibold">IIT Kharagpur</span>
+              </span>
+            </motion.div>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
